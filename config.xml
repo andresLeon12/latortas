@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.sem|2" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>SEM</name>
+<widget id="com.phonegap.latorta|2" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Latortuga</name>
     <description>
         ...
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
-        Andrés León Pérez
+        
     </author>
     <content src="index.html" />
     <preference name="permissions" value="none" />
