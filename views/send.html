@@ -1,0 +1,36 @@
+<div class="header">
+    <div class="container">
+    </div>
+</div>
+<div class="main main-raised" style="height: 100vh;overflow: auto;">
+	<div class="container">
+		<div class="section text-center">
+			
+		</div>
+		<div class="row">
+			<div class="col-md-10 col-offset-1">
+				<h5 class="text-center title"></h5>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Código</th>
+							<th>Nombre</th>
+							<th>Subtotal</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="ped in Pedido.Pedidos track by $index">
+							<td>{{ped.PROCOD}}</td>
+							<td>{{ped.PRONOM}}</td>
+							<td>${{ped.PROPRE}}</td>
+						</tr>
+						<tr>
+							<td colspan="2"><b>Total</b></td>
+							<td >${{Pedido.Total}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>		
+</div>

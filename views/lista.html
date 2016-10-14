@@ -1,0 +1,34 @@
+<div class="header">
+    <div class="container">
+    </div>
+</div>
+<div class="main main-raised" style="height: 100vh;overflow: auto;">
+	<div class="container">
+		<div class="section text-center">
+			
+		</div>
+		<div class="row">
+			<h5 class="text-center title"ng-if="lista_pedidos.length == 0">Actualmente tu carrito de compras esta vacio.</h5>
+			<div class="col-md-10 col-offset-1" ng-if="lista_pedidos.length > 0">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Número de orden</th>
+							<th>Código</th>
+							<th>Total</th>
+							<th>Detalles</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="ped in lista_pedidos track by $index">
+							<td>{{ped.VENCOS}}</td>
+							<td>{{ped.VENCOD}}</td>
+							<td>{{ped.Total}}</td>
+							<td><i class="fa fa-eye", ng-click="detalles(ped)"></i></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>		
+</div>

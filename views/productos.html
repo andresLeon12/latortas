@@ -1,0 +1,43 @@
+<div class="header">
+    <div class="container">
+    </div>
+</div>
+<div class="main main-raised" style="height: 100vh;overflow: auto;">
+	<div class="container">
+		<div class="section text-center">
+			
+		</div>
+		<p style="border-bottom: 1px; solid #ccc;" ng-if="message == ''">Menú</p>
+		<div class="row">
+			<div class="col-md-10 col-offset-1">
+				<i class="fa fa-close" id="close-browser" ng-click="hideSearchBar()" style="position:relative;float:right;margin-right:15px;padding:9px 10px;margin-top:8px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px;cursor:pointer;display:none;"></i>
+				<div id="browser" class="input-group" style="color:#5a5a5a;margin-top: -15px;display: none;width: 60wh;">
+					<span class="input-group-addon">
+	                	<i style="color: #5a5a5a;" class="fa fa-search"></i>
+	                </span>
+		            <div class="form-group is-empty">
+		            	<input ng-model="busqueda" style="color: #5a5a5a;" type="search" id="search" placeholder="Buscar..." class="form-control" />
+		            </div>
+	           	</div>
+				<div class="alert alert-warning" ng-if="message != ''">{{message}}</div>
+				<ul class="list-group" ng-if="message == ''" >
+				 	<li class="list-group-item" ng-repeat="producto in productos|filter:busqueda">
+				    	<span class="badge" ng-click="select(producto)" style="cursor: pointer;">${{producto.PROPRE}}&nbsp;&nbsp;<i class="fa fa-plus"></i></span>
+				    	{{producto.PROCOD}} - {{producto.PRONOM}}
+				    	<br>
+				    	<span style="font-size:0.9em;color: #7a7a7a;">{{producto.PRODES}}</span>
+				    	<ul class="list-group" ng-if="pedido.Pedidos.length > 0" >
+						 	<li class="list-group-item" ng-repeat="pro in pedido.Pedidos track by $index", ng-if="pro._id === producto._id" style="font-size:0.9em;color: #7a7a7a;">
+						    	<span class="badge" ng-click="delete(pro)" style="float:left;background-color:red;cursor: pointer;"><i class="fa fa-trash"></i></span>
+						    	&nbsp;&nbsp;{{pro.PROCOD}} - ${{pro.PROPRE}}
+						    	<br>
+						    	Cantidad: {{pro.PROCAN}}
+						    	<span class="badge">Importe: ${{pro.PROIMP}}</span>
+						  	</li>
+						</ul>
+				  	</li>
+				</ul>
+			</div>
+		</div>
+	</div>		
+</div>
